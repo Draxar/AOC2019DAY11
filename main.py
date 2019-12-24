@@ -44,11 +44,11 @@ class painter:
     self.board[self.y][self.x].paint(paint)
 
     #turn
-    if turn == 1:
+    if turn == 0:
       self.orient -= 1
       if self.orient == 0:
         self.orient = 4
-    if turn == 2:
+    if turn == 1:
       self.orient += 1
       if self.orient == 5:
         self.orient = 1
@@ -191,7 +191,7 @@ class compu:
 
 
 # main
-pri = painter(2000,2000,700,700)
+pri = painter(1500,1500,300,300)
 buf = [0]
 com = compu(inputProgram,[0])
 state = com.state
