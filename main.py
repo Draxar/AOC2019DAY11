@@ -17,9 +17,18 @@ class pixel:
     self.color = color 
 
   def __repr__(self):
-    return str(self.color)
+    if self.color == 1:
+     return "█"
+    if self.color == 0:
+     return " "
 
 class painter:
+  def printBord(self):
+    for i in range(self.lenght):
+      for j in range(self.width):
+        print(self.board[i][j], end = '')
+
+      print("")
   def __init__(self, width, lenght, x, y):
     self.width = width
     self.lenght = lenght
@@ -191,9 +200,9 @@ class compu:
 
 
 # main
-pri = painter(1500,1500,300,300)
+pri = painter(50,8,1,1)
 buf = [0]
-com = compu(inputProgram,[0])
+com = compu(inputProgram,[1])
 state = com.state
 instructs = 0
 while state != 2:
@@ -204,3 +213,4 @@ while state != 2:
   instructs += 1
 print(pri.getPainted())
 print(instructs)
+print(pri.printBord())
